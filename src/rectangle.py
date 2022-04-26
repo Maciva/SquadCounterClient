@@ -8,7 +8,17 @@ class Rectangle:
         y2 = min(max(a.y1, a.y2), max(b.y1, b.y2))
         if x1<x2 and y1<y2:
             return type(self)(x1, y1, x2, y2)
+    
+    def multiply(self, factor: int):
+        x1 = self.x1 * factor
+        y1 = self.y1 * factor
+        x2 = self.x2 * factor
+        y2 = self.y2 * factor
+        return type(self)(x1, y1, x2, y2)
+        
+    __mul__ = multiply
     __and__ = intersection
+    
 
     def __init__(self, x1, y1, x2, y2):
         if x1>x2 or y1>y2:
