@@ -70,7 +70,7 @@ def loop(boxes, templates, debug):
         if alive != previous_alive:
             print("Currently alive: " + str(alive), end="\r")
             debug.append("Currently alive: " + str(alive))
-            # requests.post("http://173.212.247.39:8000/report", json={"alive": alive, "group": group_num})
+            requests.post("http://173.212.247.39:8000/report", json={"alive": alive, "group": group_num})
             previous_alive = alive
 
 previous_alive = -1

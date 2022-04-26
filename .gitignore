@@ -1,0 +1,5 @@
+.git
+.vscode
+build
+output
+src/__pycache__/*
