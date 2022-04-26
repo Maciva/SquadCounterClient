@@ -62,7 +62,7 @@ def calculate_aspect(width: int, height: int):
     return x , y
     
 
-def loop(boxes, templates, debug):
+def loop(boxes, templates, group_num, debug):
     global previous_alive
     dead = run_detection(boxes, templates, debug)
     if(dead != None):
@@ -160,7 +160,7 @@ def main():
     print("Running...")
     while True:
         debug = []
-        loop(boxes, templates, debug)
+        loop(boxes, templates, group_num, debug)
         if config['DEFAULT']['DEBUG'] == 'True':
             print("\n".join(debug))
         time.sleep(1)
